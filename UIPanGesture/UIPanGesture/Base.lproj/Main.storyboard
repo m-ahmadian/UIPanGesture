@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIPanGesture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trash Can" translatesAutoresizingMaskIntoConstraints="NO" id="9ZR-wt-2um">
+                                <rect key="frame" x="295" y="731" width="99" height="131"/>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fille Image" translatesAutoresizingMaskIntoConstraints="NO" id="M4M-rY-SEV">
+                                <rect key="frame" x="20" y="44" width="118" height="120"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="M4M-rY-SEV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2Wx-2Q-nuH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="M4M-rY-SEV" secondAttribute="bottom" constant="698" id="Bug-OI-Jn6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M4M-rY-SEV" secondAttribute="trailing" constant="276" id="Q2R-3Y-RA4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9ZR-wt-2um" secondAttribute="trailing" constant="20" id="Sra-Jg-qoc"/>
+                            <constraint firstItem="9ZR-wt-2um" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="687" id="dbF-7W-C63"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9ZR-wt-2um" secondAttribute="bottom" id="p7N-xW-9E3"/>
+                            <constraint firstItem="M4M-rY-SEV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wp8-8W-5Ru"/>
+                            <constraint firstItem="9ZR-wt-2um" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="295" id="xUc-ta-Va2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="fileImageView" destination="M4M-rY-SEV" id="iRC-sa-6Cc"/>
+                        <outlet property="trashImageView" destination="9ZR-wt-2um" id="gEi-eO-hhP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6" y="139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Fille Image" width="512" height="512"/>
+        <image name="Trash Can" width="860" height="1077"/>
+    </resources>
+</document>
