@@ -33,25 +33,38 @@ class ViewController: UIViewController {
     
     @objc func handlePan(sender: UIPanGestureRecognizer) {
         let fileView = sender.view!
-        let translate = sender.translation(in: view)
         
         switch sender.state {
         case .began, .changed:
-            fileView.center = CGPoint(x: fileView.center.x + translate.x, y: fileView.center.y + translate.y)
-            sender.setTranslation(CGPoint.zero, in: view)
+            moveViewWithPan(view: fileView, sender: sender)
             
         case .ended:
             if fileView.frame.intersects(trashImageView.frame) {
-                UIView.animate(withDuration: 0.3) {
-                    self.fileImageView.alpha = 0.0
-                }
+                deleteView(view: fileView)
             } else {
-                UIView.animate(withDuration: 0.3) {
-                    self.fileImageView.frame.origin = self.fileViewOrigin
-                }
+                returnViewToOrigin(view: fileView)
             }
         default:
             break
+        }
+    }
+    
+    
+    func moveViewWithPan(view: UIView, sender: UIPanGestureRecognizer) {
+        let translate = sender.translation(in: self.view)
+        view.center = CGPoint(x: view.center.x + translate.x, y: view.center.y + translate.y)
+        sender.setTranslation(CGPoint.zero, in: self.view)
+    }
+    
+    func returnViewToOrigin(view: UIView) {
+        UIView.animate(withDuration: 0.3) {
+            view.frame.origin = self.fileViewOrigin
+        }
+    }
+    
+    func deleteView(view: UIView) {
+        UIView.animate(withDuration: 0.3) {
+            view.alpha = 0.0
         }
     }
     
